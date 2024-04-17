@@ -2,15 +2,52 @@
 "use strict";
 
 /**
- * Listing 12.5 (p. 178)
- * 홈 컨트롤러로의 라우팅
+ * Listing 10.2
  */
-
+exports.respondWithName1 = (req, res) => {
+    res.render('index');
+}
 
 /**
- * Listing 12.9 (p. 182)
- * 콘텐츠의 설정과 렌더링된 뷰에 전달
- * 
- * [노트] 뷰 안에서는 offeredCourses라는 변수명을 통해 배열에 접근할 수 있다.
- * 홈 컨트롤러 내에서 이 배열은 courses라는 이름으로 다룬다.
+ * Listing 10.3 
  */
+exports.getHome = (req, res) => { res.render('index', {
+    name: "Sarah",
+    people: {
+        usa: {
+            einstein: "Alber Einstein",
+            musk: "Elon Musk",
+            jobs: "Steve Jobs"
+        },
+        korea: {
+            psy: "name A",
+            kim: "name B"
+        },
+        mexico: {
+            jesus: "Jesus Alvarez"
+        }
+    }
+}); } // "/" index
+// exports.getContact = (req, res) => {} // "/Contact" Get method
+// exports.postContact = (req, res) => {} // "/Contact" Post method
+
+exports.respondWithName = (req, res) => {
+    let paramsName = req.params.myName;  // 라우트 매개변수 /name/:myname
+    res.render('index', { 
+        name: paramsName ,
+        people: {
+            usa: {
+                einstein: "Alber Einstein",
+                musk: "Elon Musk",
+                jobs: "Steve Jobs"
+            },
+            korea: {
+                psy: "name A",
+                kim: "name B"
+            },
+            mexico: {
+                jesus: "Jesus Alvarez"
+            }
+        }
+    });
+};
