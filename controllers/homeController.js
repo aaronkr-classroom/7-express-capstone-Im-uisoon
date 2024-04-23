@@ -20,8 +20,8 @@ exports.getHome = (req, res) => { res.render('index', {
             jobs: "Steve Jobs"
         },
         korea: {
-            psy: "name A",
-            kim: "name B"
+            psy: "싸이다!",
+            kim: "김예수"
         },
         mexico: {
             jesus: "Jesus Alvarez"
@@ -42,8 +42,8 @@ exports.respondWithName = (req, res) => {
                 jobs: "Steve Jobs"
             },
             korea: {
-                psy: "name A",
-                kim: "name B"
+                psy: "싸이다!",
+                kim: "김예수"
             },
             mexico: {
                 jesus: "Jesus Alvarez"

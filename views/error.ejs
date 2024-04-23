@@ -1,17 +1,18 @@
-   
-<!-- @TODO: error.ejs -->
-<main class="">
-  <div class="container px-4 py-5 text-center mb-5">
-    <!-- Inspiration: https://codepen.io/abol/pen/arPeZz -->
-    <h1 class="display-4">404</h1>
-    <figure class="img-404">
-      <img src="img/dribbble_404.gif" />
-    </figure>
-    <h2>Looks like you're lost.</h2>
-    <p class="pt-3 pb-3 w-75 mx-auto">
-      The page you are looking for was not found. But you can click the button
-      below to go back to the homepage.
-    </p>
-    <a href="/" class="btn btn-outline-success btn-lg">Back to Home</a>
-  </div>
-</main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>! Error Page !</title>
+</head>
+<body>
+    <h1>Error: <%= errorCode %></h1>
+    <% if (errorCode === 404) { %>
+        <p>Sorry, the page you are looking for could not be found.</p>
+    <% } else if (errorCode === 500) { %>
+        <p>Sorry, there was an internal server error.</p>
+    <% } else { %>
+        <p>Sorry, something went wrong.</p>
+    <% } %>
+</body>
+</html>
